@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+<!-- 
+    CONTENT
+-->
+{% block content %}
+<h1>Bienvenido {{ alumno.name }} {{ alumno.lastname}} </h1>
+{% if asignados > 0 %}
+<p>
+Tus cursos son:
+</p>
+   <ul>
+        {% for curso in cursos %}
+        <li><b> {{curso.nombre}}</b></li>
+        {% endfor %}
+   </ul>
+{% else %}
+<p>
+que esperas para inscribirte?
+</p>
+{% endif %}
+
+
+
+<br/>
+<br/>
+<p>{{ agent }}</p>
+{% endblock %}
