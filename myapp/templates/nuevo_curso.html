@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+<section class="section">
+<!-- 
+    CONTENT
+-->
+{% block content %}
+<form method="POST">
+{% csrf_token %}
+{{ form.as_p }}
+
+​<button ​​type​=​"submit"​​ value​=​"Añadircurso"> Enviar </button​>
+</form>
+</section>
+{% endblock %}
