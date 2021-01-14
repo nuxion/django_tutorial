@@ -12,6 +12,12 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 import os
 from pathlib import Path
+import logging
+
+log = logging.getLogger("LOG PRUEBA")
+logging.basicConfig(level=logging.ERROR, format='%(asctime)s %(name)s - %(levelname)s - %(message)s')
+
+
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.

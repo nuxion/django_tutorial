@@ -2,16 +2,23 @@
 #from django.http import HttpResponse
 from django.http import JsonResponse, HttpResponseRedirect
 from django.shortcuts import render, Http404
-from myapp.models import Curso
+from myapp.models import Curso, Profesor
 from django.urls import reverse
 from myapp import forms 
+from django.views import generic
+import logging
+
+log = logging.getLogger(__name__)
 
 # Create your views here.
 def index(request):
 
+    log.error("Desde mi logger")
     msg = "Hola mundo"
     agent = request.headers['User-Agent']
     cursos = Curso.objects.all()
+
+
 
 
     data = {
@@ -73,4 +80,15 @@ def nuevo_curso(request):
     ctx = {'form': form}
 
     return render(request, 'nuevo_curso.html', ctx)
+
+
+
+class CursoGeneric(generic.ListView):
+    template_name = 'cursos.html'
+    context_object_name = 'cursos'
+
+    def get_queryset(self):
+        """Return the last five published questions."""
+        return Curso.objects.order_by('turnos')[:5]
+
 
