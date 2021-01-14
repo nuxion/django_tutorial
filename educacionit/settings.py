@@ -34,7 +34,7 @@ SECRET_KEY = os.getenv("SECRET_KEY", "test")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "nuxion.pythonanywhere.com"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1","comisionxpy.herokuapp.com", "nuxion.pythonanywhere.com"]
 
 
 # Application definition
